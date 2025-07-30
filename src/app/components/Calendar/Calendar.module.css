@@ -1,0 +1,243 @@
+/* components/Calendar.module.css */
+.calendar {
+  font-family: "MedievalSharp", cursive;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 3px solid #8b4513;
+  border-radius: 10px;
+  background-color: #f5f1e6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  color: #3a2615;
+}
+
+.timeDisplay {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(139, 69, 19, 0.1);
+  border: 2px dashed #8b4513;
+  border-radius: 5px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeAdjusters {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+}
+
+.timeButton {
+  padding: 0.5rem;
+  background: #8b4513;
+  color: #f5f1e6;
+  border: 1px solid #5d2d0f;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.timeButton:hover {
+  background: #a0522d;
+  transform: translateY(-2px);
+}
+
+.dateSelector {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.seasonSelect,
+.daySelect {
+  flex: 1;
+  padding: 0.5rem;
+  background: #f5f1e6;
+  border: 2px solid #8b4513;
+  border-radius: 4px;
+  color: #3a2615;
+  min-width: 150px;
+}
+
+.setDateButton {
+  padding: 0.5rem 1rem;
+  background: #4a752c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.setDateButton:hover {
+  background: #5a8c37;
+}
+
+@media (max-width: 600px) {
+  .timeAdjusters {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .dateSelector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* Новые стили для блока прошедшего времени */
+.elapsedTime {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(139, 69, 19, 0.15);
+  border: 1px solid #8b4513;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.elapsedTime h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  color: #5d2d0f;
+}
+
+.elapsedValues {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.elapsedValues span {
+  background: rgba(139, 69, 19, 0.25);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  min-width: 100px;
+}
+
+.startDateInfo {
+  font-style: italic;
+  color: #6b3a1f;
+  font-size: 0.9rem;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .elapsedValues {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .elapsedValues span {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+/* Стили для JSON секции */
+.jsonSection {
+  margin-top: 2rem;
+  border-top: 2px dashed #8b4513;
+  padding-top: 1.5rem;
+}
+
+.toggleJsonButton {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background: #5d2d0f;
+  color: #f5f1e6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.toggleJsonButton:hover {
+  background: #8b4513;
+}
+
+.jsonContainer {
+  margin-top: 1.5rem;
+  background: rgba(139, 69, 19, 0.08);
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #8b4513;
+}
+
+.jsonActions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.jsonButton {
+  padding: 8px 16px;
+  background: #4a752c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.jsonButton:hover {
+  background: #5a8c37;
+}
+
+.jsonData {
+  width: 100%;
+  padding: 12px;
+  font-family: monospace;
+  background: #fdf5e6;
+  border: 1px solid #8b4513;
+  border-radius: 5px;
+  resize: vertical;
+  color: #3a2615;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.importSection {
+  margin-top: 1.5rem;
+}
+
+.importSection h4 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: #5d2d0f;
+  font-size: 1.1rem;
+}
+
+.importButton {
+  display: block;
+  margin-top: 0.8rem;
+  padding: 10px 20px;
+  background: #8b4513;
+  color: #f5f1e6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.importButton:hover {
+  background: #a0522d;
+}
